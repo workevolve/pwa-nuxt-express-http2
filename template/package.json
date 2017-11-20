@@ -1,0 +1,77 @@
+{
+  "name": "{{ name }}",
+  "version": "1.0.0",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "private": true,
+  "scripts": {
+    "dev": "backpack dev",
+    "build": "nuxt build && backpack build",
+    "start": "cross-env NODE_ENV=production node build/main.js",
+    "precommit": "npm run lint",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^4.5.0",
+    "@nuxtjs/component-cache": "^1.1.0",
+    "@nuxtjs/pwa": "^2.0.2",
+    "axios": "^0.17.1",
+    "cross-env": "^5.0.5",
+    "muse-ui": "^2.1.0",
+    "nuxt": "^1.0.0-rc11",
+    "source-map-support": "^0.5.0"
+  },
+  "devDependencies": {
+    {{#stamp}}
+    "@stamp/arg-over-prop": "^1.0.1",
+    "@stamp/check-compose": "^1.0.3",
+    "@stamp/collision": "^1.0.1",
+    "@stamp/compose": "^1.0.1",
+    "@stamp/configure": "^1.0.1",
+    "@stamp/core": "^1.0.0",
+    "@stamp/eventemittable": "^1.0.1",
+    "@stamp/fp-constructor": "^1.0.0",
+    "@stamp/init-property": "^1.0.0",
+    "@stamp/is": "^1.0.0",
+    "@stamp/it": "^1.0.1",
+    "@stamp/named": "^1.0.1",
+    "@stamp/privatize": "^1.0.1",
+    "@stamp/required": "^1.0.0",
+    "@stamp/shortcut": "^1.0.1",
+    {{/stamp}}
+    {{#awesome}}
+    "@nuxtjs/font-awesome": "^1.0.2",
+    {{/awesome}}
+    {{#bootstrap}}
+    "@nuxtjs/bootstrap-vue": "^2.0.4",
+    {{/bootstrap}}
+    {{#lint}}
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.19.0",
+    {{#if_eq lintConfig "standard"}}
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^3.0.1",
+    {{/if_eq}}
+    {{#if_eq lintConfig "airbnb"}}
+    "eslint-config-airbnb-base": "^11.3.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-plugin-import": "^2.7.0",
+    {{/if_eq}}
+    "eslint-plugin-html": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    {{/lint}}
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "node-sass": "^4.7.1",
+    "nodemon": "^1.12.1",
+    "sass-loader": "^6.0.6",
+    "scmp": "^2.0.0",
+    "babel-loader": "^7.1.1",
+    "backpack-core": "^0.4.3"
+  }
+}
