@@ -65,8 +65,10 @@
     "eslint-loader": "^1.7.1",
     "eslint-friendly-formatter": "^3.0.0",
     {{/lint}}
+    {{#alwayFalseTestLater}}
     "express": "^4.16.2",
-    "express-session": "^1.15.6",
+    {{/alwayFalseTestLater}}
+    "spdy": "^3.4.7"
     "node-sass": "^4.7.1",
     "nodemon": "^1.12.1",
     "sass-loader": "^6.0.6",
